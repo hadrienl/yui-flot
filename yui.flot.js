@@ -1554,6 +1554,13 @@ Datasource is optional, you only need it if one of your axes has its mode set to
 
 			ctx.lineWidth = lw;
 			ctx.strokeStyle = series.color;
+			if (series.blur)
+			{
+				ctx.shadowOffsetX = 0;
+				ctx.shadowOffsetY = 0;
+				ctx.shadowBlur = series.blur;
+				ctx.shadowColor = series.color;
+			}
 			var fillStyle = getFillStyle(series.lines, series.color, 0, plotHeight);
 			if (fillStyle) {
 				ctx.fillStyle = fillStyle;
